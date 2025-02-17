@@ -21,6 +21,11 @@ class JsonConfigurationSource extends FileConfigurationSource implements Configu
     /** {@inheritDoc} */
     public function load(): array
     {
+        /**
+         * Decoded configuration.
+         *
+         * @var array|null $configuration
+         */
         $configuration = json_decode($this->read(), true);
 
         if (is_null($configuration)) {
